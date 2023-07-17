@@ -1,3 +1,3 @@
 # NodeJS Socketio CRUD
 
-`npm install --save-dev @babel/core @babel/node`
+`$ npm install --save-dev @babel/cli @babel/core @babel/preset-env`
