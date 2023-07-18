@@ -9,8 +9,11 @@ const io = new Server(server);
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', (socket) => {
-	console.log('a user connected');
-	console.log('info:', socket);
+	console.log('a user connected:', socket.id);
+	socket.emit('ping');
+	socket.on('pong', () => {
+		console.log('pong');
+	});
 });
 
 server.listen(4001, () => {
