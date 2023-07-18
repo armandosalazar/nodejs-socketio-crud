@@ -1,6 +1,4 @@
 import http from 'http';
-import {CLIENT_RENEG_LIMIT} from 'tls';
-
 
 const server = http.createServer((req, res) => {
 	res.end('Hello World');
@@ -8,4 +6,8 @@ const server = http.createServer((req, res) => {
 
 console.log('Estamos en el tutorial de Node+Babel :)');
 
-export default server;
+server.listen(6000, () => {
+	console.log('Server on port 3000');
+});
+
+// export default server;
