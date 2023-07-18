@@ -1,9 +1,10 @@
-import http from 'http';
+import express from 'express';
 
-const server = http.createServer((req, res) => {
-	res.end('Hello from the server');
-}).listen(4001);
+const app = express();
 
-console.log('Estamos en el tutorial de Node+Babel :)');
+app.get('/', (req, res) => {
+	res.send('Hello World');
+});
 
-export default server;
+app.listen(4001);
+console.log('http://localhost:4001');
