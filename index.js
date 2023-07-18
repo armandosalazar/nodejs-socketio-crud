@@ -1,13 +1,9 @@
 import http from 'http';
 
 const server = http.createServer((req, res) => {
-	res.end('Hello World');
-});
+	res.end('Hello from the server');
+}).listen(4001);
 
 console.log('Estamos en el tutorial de Node+Babel :)');
 
-server.listen(6000, () => {
-	console.log('Server on port 3000');
-});
-
-// export default server;
+export default server;
