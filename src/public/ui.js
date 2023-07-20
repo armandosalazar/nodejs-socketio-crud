@@ -6,6 +6,8 @@ function appendNote(note) {
     noteElement.innerHTML = `
         <h3>${note.title}</h3>
         <p>${note.description}</p>
+        <button>Delete</button>
+        <button>Update</button>
     `;
 
     notes.appendChild(noteElement);
