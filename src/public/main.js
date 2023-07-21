@@ -1,5 +1,4 @@
 const form = document.querySelector('#form-notes');
-const notification = document.querySelector('#notification');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();

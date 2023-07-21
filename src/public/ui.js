@@ -1,4 +1,5 @@
 const notesList = document.querySelector('#container-notes');
+const notification = document.querySelector('.alert-success');
 
 function renderNotes(notes) {
     console.log(notes);
@@ -8,11 +9,12 @@ function renderNotes(notes) {
 function renderNote(note) {
     const noteElement = document.createElement('article');
     noteElement.classList.add('note');
+    noteElement.classList.add('card');
     noteElement.innerHTML = `
-        <h3>${note.title}</h3>
+        <h4>${note.title}</h4>
         <p>${note.description}</p>
-        <button class="delete" data-id=${note.id}>Delete</button>
-        <button class="update" data-id=${note.id}>Update</button>
+        <button class="btn btn-info update" data-id=${note.id}>Update</button>
+        <button class="btn btn-danger delete" data-id=${note.id}>Delete</button>
     `;
 
     const deleteButton = noteElement.querySelector('.delete');
@@ -27,11 +29,11 @@ function renderNote(note) {
 
     // notes.appendChild(noteElement);
 
-    // notification.innerHTML = `<p>New note!</p>`;
-    // notification.style = 'display: block;';
-    // setTimeout(() => {
-    //     notification.style = 'display: none;';
-    // }, 1000);
+    notification.textContent = `New note!`;
+    notification.style = 'display: block;';
+    setTimeout(() => {
+        notification.style = 'display: none;';
+    }, 1000);
 
     return noteElement;
 }
