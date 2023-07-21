@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD WebSockets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <div id="notification"></div>
-
     <h1>CRUD WebSockets</h1>
-    <div class="container">
-        <h2>Add Note</h2>
-        <form action="" id="form-notes">
-            <input type="text" name="title">
-            <textarea name="description" cols="30" rows="3"></textarea>
-            <input type="submit" value="Send">
-        </form>
-    </div>
+    <main>
+        <div class="container">
+            <h2>Add Note</h2>
+            <form action="" id="form-notes">
+                <input type="text" name="title">
+                <textarea name="description" cols="30" rows="3"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
 
-    <section id="container-notes"></section>
-
+        <section id="container-notes"></section>
+    </main>
     <!-- http://localhost:4001/socket.io/socket.io.min.js -->
     <script src="/socket.io/socket.io.min.js"></script>
     <script src="./ui.js"></script>

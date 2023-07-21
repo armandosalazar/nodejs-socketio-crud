@@ -14,6 +14,8 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', (socket) => {
 	console.log('Client connected:', socket.id);
 
+	socket.emit('server:[notes]', notes);
+
 	socket.on('client:[new-note]', (note) => {
 		notes.push({ id: uuid(), ...note });
 
