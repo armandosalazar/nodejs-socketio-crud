@@ -11,4 +11,6 @@ form.addEventListener('submit', (event) => {
     const note = { title, description };
 
     newNote(note);
+
+    form.reset();
 });
