@@ -3,10 +3,17 @@ const notification = document.querySelector('.alert-success');
 
 function renderNotes(notes) {
     console.log(notes);
-    notes.forEach(note => appendNote(note));
+
+    notes.forEach(note => appendNote(note, true));
+
+    notification.textContent = `All notes render successfully!`;
+    notification.style = 'display: block;';
+    setTimeout(() => {
+        notification.style = 'display: none;';
+    }, 1000);
 }
 
-function renderNote(note) {
+function renderNote(note, renderFromServer = false) {
     const noteElement = document.createElement('article');
     noteElement.classList.add('note');
     noteElement.classList.add('card');
@@ -27,9 +34,9 @@ function renderNote(note) {
         updateNoteById(note.id);
     });
 
-    // notes.appendChild(noteElement);
+    if (renderFromServer) return noteElement;
 
-    notification.textContent = `New note!`;
+    notification.textContent = `New note added successfully!`;
     notification.style = 'display: block;';
     setTimeout(() => {
         notification.style = 'display: none;';
@@ -38,6 +45,6 @@ function renderNote(note) {
     return noteElement;
 }
 
-function appendNote(note) {
-    notesList.appendChild(renderNote(note));
+function appendNote(note, renderFromServer = false) {
+    notesList.appendChild(renderNote(note, renderFromServer));
 }
