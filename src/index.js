@@ -1,26 +1,13 @@
 import express from 'express';
 import { Server } from 'socket.io';
 import http from 'http';
-import { v4 as uuid } from 'uuid';
-
-const notes = [];
+import sockets from './sockets';
 
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
-
 app.use(express.static(__dirname + '/public'));
 
-io.on('connection', (socket) => {
-	console.log('Client connected:', socket.id);
+const server = http.createServer(app);
+sockets(new Server(server));
 
-	socket.on('client:[new-note]', (note) => {
-		notes.push({ id: uuid(), ...note });
-
-		socket.emit('server:[new-note]', note);
-	});
-});
-
-server.listen(4001, () => {
-	console.log('http://localhost:4001');
-});
+server.listen(4001);
+console.log('Server running on: http://localhost:4001');

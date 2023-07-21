@@ -1,5 +1,4 @@
 const form = document.querySelector('#form-notes');
-const notification = document.querySelector('#notification');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -11,5 +10,7 @@ form.addEventListener('submit', (event) => {
 
     const note = { title, description };
 
-    saveNote(note);
+    newNote(note);
+
+    form.reset();
 });
