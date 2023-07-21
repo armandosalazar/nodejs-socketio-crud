@@ -2,10 +2,10 @@ const notesList = document.querySelector('#container-notes');
 
 function renderNotes(notes) {
     console.log(notes);
-    notes.forEach(note => appendNote(noteUI(note)));
+    notes.forEach(note => appendNote(note));
 }
 
-function noteUI(note) {
+function renderNote(note) {
     const noteElement = document.createElement('article');
     noteElement.classList.add('note');
     noteElement.innerHTML = `
@@ -27,15 +27,15 @@ function noteUI(note) {
 
     // notes.appendChild(noteElement);
 
-    notification.innerHTML = `<p>New note!</p>`;
-    notification.style = 'display: block;';
-    setTimeout(() => {
-        notification.style = 'display: none;';
-    }, 1000);
+    // notification.innerHTML = `<p>New note!</p>`;
+    // notification.style = 'display: block;';
+    // setTimeout(() => {
+    //     notification.style = 'display: none;';
+    // }, 1000);
 
     return noteElement;
 }
 
 function appendNote(note) {
-    notesList.appendChild(noteUI(note));
+    notesList.appendChild(renderNote(note));
 }

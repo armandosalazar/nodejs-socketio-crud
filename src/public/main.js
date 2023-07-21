@@ -11,5 +11,5 @@ form.addEventListener('submit', (event) => {
 
     const note = { title, description };
 
-    saveNote(note);
+    newNote(note);
 });
