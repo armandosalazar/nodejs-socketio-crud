@@ -10,7 +10,16 @@ form.addEventListener('submit', (event) => {
 
     const note = { title, description };
 
-    newNote(note);
+    if (idSaved != '') {
+        updateNote(idSaved, note);
+        idSaved = '';
+        form.getElementsByTagName('button')[0].textContent = 'Add';
+        form.getElementsByTagName('button')[0].classList.remove('btn-success');
+        form.getElementsByTagName('button')[0].classList.add('btn-primary');
+    } else {
+        addNote(note);
+    }
+
 
     form.reset();
 });
