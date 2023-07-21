@@ -5,17 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD WebSockets</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+    <div id="notification"></div>
+
     <h1>CRUD WebSockets</h1>
-    <div>
+    <div class="container">
         <h2>Add Note</h2>
-        <form action=""></form>
+        <form action="" id="form-notes">
+            <input type="text" name="title">
+            <textarea name="description" cols="30" rows="3"></textarea>
+            <input type="submit" value="Send">
+        </form>
     </div>
+
+    <section id="container-notes"></section>
 
     <!-- http://localhost:4001/socket.io/socket.io.min.js -->
     <script src="/socket.io/socket.io.min.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./socket.js"></script>
     <script src="./main.js"></script>
 </body>
 
