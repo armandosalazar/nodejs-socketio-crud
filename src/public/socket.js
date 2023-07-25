@@ -1,5 +1,5 @@
-
-socket = io('http://localhost:4001');
+// socket = io('http://localhost:4001');
+socket = io();
 
 socket.on('server:[notes]', renderNotes);
 socket.on('server:[add-note]', appendNote);
